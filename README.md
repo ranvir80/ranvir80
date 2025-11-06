@@ -1,34 +1,122 @@
-<h1 align="center">Hi 👋, I'm Ranvir Pardeshi</h1>
-<h3 align="center">💻 A passionate AI Automation Expert & AI Agent Devloper from India</h3>
+<!-- Animated Banner -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&gradient=0:8A2BE2,100:33FF33&height=250&section=header&text=Ranvir%20Pardeshi&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38" alt="Dynamic Banner"/>
+</div>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=ranvir80&label=Profile%20views&color=0e75b6&style=flat" alt="ranvir80" /> </p>
+<div align="center">
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ranvir80" alt="ranvir80" /></a> </p>
+  <!-- Animated Greeting -->
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=33FF33&center=true&vCenter=true&width=500&lines=Hey+I'm+Ranvir+Pardeshi+👋;AI+Agent+Developer;AI+Automation+Expert;Freelancer+and+Student" alt="Typing SVG" />
 
-- 🔭 I’m currently working on **Advanced AI Automation Projects**
+</div>
 
-- 🌱 I’m currently learning **LangGraph, CrewAI, and AutoGen frameworks Next.js 15, TypeScript, and WebSocket automation Cloud deployment for Node.js and Python apps**
+<div align="center">
+  
+  <!-- Social Badges -->
+  <p align="center">
+    <a href="https://github.com/ranvir80">
+      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+    </a>
+    <a href="https://linkedin.com/in/your-linkedin-username"> <!-- 👈 PASTE YOUR LINKEDIN USERNAME HERE -->
+      <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    </a>
+    <a href="https://ranvirpardeshi.me">
+      <img src="https://img.shields.io/badge/Portfolio-33FF33?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMTcuNWMtNC4xNCAwLTcuNS0zLjM2LTcuNS03LjVzMy4zNi03LjUgNy41LTcuNSA3LjUgMy4zNiA3LjUgNy41LTMuMzYgNy41LTcuNSA3LjV6bS0zLjU4LTYuMDNsMi41MyAyLjUzYy4yLjIgLjQ1LjMgLjcxLjNzLjUxLS4xLjcxLS4zYzEuMDYtMS4wNiAyLjM2LTIuMzYgMy4zOS0zLjM5LjQtLjQuNC0xLjA1IDAtMS40NS0uNDEtLjQtMS4wNi0uNC0xLjQ2IDBsLTIuNjYgMi42Ni0xLjgyLTEuODJjLS40LS40LTEuMDUtLjQtMS40NiAwLS40LjQuNC0xLjA1IDAgMS40NXoiLz48L3N2Zz4=" alt="Portfolio"/>
+    </a>
+    <a href="mailto:pardeshiranvir000@outlook.com">
+      <img src="https://img.shields.io/badge/Email-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" alt="Email"/>
+    </a>
+  </p>
 
-- 👯 I’m looking to collaborate on **AI + Web Integrations** using Node.js, Python, LangChain, and n8n.**
+</div>
 
-- 🤝 I’m looking for help with **Scaling **multi-agent AI systems** and real-time automation setups.**
+---
 
-- 💬 Ask me about **Node.js, Python, LangChain, n8n, and building custom AI agents.**
+<!-- Introduction -->
+> I'm passionate about building next-gen AI systems and automation solutions that make businesses smarter and faster. As a student and developer, I specialize in creating AI agents, automation workflows, and custom AI-powered tools that deliver real results.
 
-- 📫 How to reach me **pardeshiranvir156@gmail.com**
+---
 
-- ⚡ Fun fact **I can turn almost any idea into an automated AI workflow ⚙️**
+### 💡 What I Do
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/ranvirpardeshi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ranvirpardeshi" height="30" width="40" /></a>
+- 🤖 **AI Agent Development**: Building intelligent, autonomous agents for web, business, and productivity.
+- ⚙️ **AI Automation**: Designing end-to-end automation systems using **n8n**, **LangChain**, and **LangGraph**.
+- 💻 **Backend & API Workflows**: Using **Node.js** and **Python** to integrate AI with real-world applications.
+- 🛠️ **Custom AI Tooling**: Developing bespoke AI-powered tools and interfaces from the ground up.
+
+---
+
+### 🧰 My Tech Stack
+
+<p align="center">
+  <!-- Languages & Frameworks -->
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+  
+  <br/>
+  
+  <!-- AI & Automation Tools -->
+  <img src="https://img.shields.io/badge/LangChain-008639?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain"/>
+  <img src="https://img.shields.io/badge/n8n-1A1A1A?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n"/>
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
+  <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face"/>
+  <img src="https://img.shields.io/badge/Groq-0079C2?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCA4LTggOHptLTQuNS04YzAtMi40OSAyLjAxLTQuNSA0LjUtNC41djJoLTV2NWgtMnYtNS41QzQuNSAxMi4wMSA2LjQ5IDEwIDkgMTBoMnYtMmgtMmMtMS4zOCAwLTIuNS0xLjEyLTIuNS0yLjVoMnYtMmg1Yy4yOCAwIC41My4xMS43MS4yOWwuNzEuNzFjLjE4LjE4LjI5LjQzLjI5Ljcxdi0uMDFoMnYyLjVoLTJ2LTFoLTR2MWgxLjVjMS4zOCAwIDIuNSA0IDIuNSA1LjVoLTJjMC0xLjM4LTEuMTItMi41LTIuNS0yLjVIMTB2M2gybDEuMjkgMS4yOWMuMTguMTguMjkuNDMuMjkuNzFIMTRjLjU1IDAgMS0uNDUgMS0xVjguNWgydjYuNWMwIDEuMzgtMS4xMiAyLjUtMi41IDIuNUg5di0zaDIuNWMyLjQ5IDAgNC41LTEuNjQgNC41LTQuNWgtMi4yN0wxMyAxMC4yM3YyLjI3SDh2LTJoLTJ2MnoiLz48L3N2Zz4=" alt="Groq"/>
+  
+  <br/>
+  
+  <!-- Databases & DevOps -->
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  <img src="https://img.shields.io/badge/Pinecone-0081C8?style=for-the-badge&logo=pinecone&logoColor=white" alt="Pinecone"/>
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://appwrite.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg" alt="appwrite" width="40" height="40"/> </a> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://zapier.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg" alt="zapier" width="40" height="40"/> </a> </p>
+---
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=ranvir80&show_icons=true&locale=en&layout=compact" alt="ranvir80" /></p>
+### 📊 My GitHub Stats
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ranvir80&show_icons=true&locale=en" alt="ranvir80" /></p>
+<div align="center">
+  
+  <!-- GitHub Stats Card -->
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img 
+      src="https://github-readme-stats.vercel.app/api?username=ranvir80&show_icons=true&theme=tokyonight&icon_color=33FF33&title_color=33FF33&text_color=c9d1d9&bg_color=0d1117&border_color=21262d" 
+      alt="Ranvir's GitHub Stats" 
+    />
+  </a>
+  
+  <!-- Top Languages Card -->
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img 
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=ranvir80&layout=compact&langs_count=10&theme=tokyonight&bg_color=0d1117&border_color=21262d&title_color=33FF33&text_color=c9d1d9" 
+      alt="Top Languages"
+    />
+  </a>
+  
+  <!-- GitHub Streak -->
+  <a href="https://github-readme-streak-stats.herokuapp.com">
+    <img 
+      src="https://github-readme-streak-stats.herokuapp.com/?user=ranvir80&theme=tokyonight&hide_border=true&background=0d1117&date_format=M%20j%5B%2C%20Y%5D&stroke=33FF33&ring=33FF33" 
+      alt="GitHub Streak"
+    />
+  </a>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=ranvir80&" alt="ranvir80" /></p>
+
+  
+
+</div>
+
+---
+
+### 🐍 My Contribution Snake
+
+<div align="center">
+
+  <!-- The snake SVG is generated by a GitHub Action and will show up here -->
+  <img src="dist/github-snake-dark.svg?palette=github-dark" alt="GitHub Contribution Snake"/>
+  
+</div>
+
+---

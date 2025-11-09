@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><linearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 style=%22stop-color:%23333333;%22 /><stop offset=%22100%25%22 style=%22stop-color:%23555555;%22 /></defs><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22url(%23g)%22 /><text x=%2250%22 y=%2250%22 font-family=%22'Poppins', sans-serif%22 font-size=%2250%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-weight=%22600%22>RP</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranvir Pardeshi | AI & Automation Developer</title>
+    
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#FFFFFF" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Ranvir Pardeshi, a high school student passionate about AI Agents, Automation, and Web Development. Explore my projects and skills in LangChain, N8n, Node.js, and more." />
+    <meta name="keywords" content="Ranvir Pardeshi, AI Developer, Automation Developer, LangChain, LangGraph, N8n, Web Developer, Portfolio, High School Developer" />
+    <meta name="author" content="Ranvir Pardeshi" />
+    <link rel="canonical" href="https://ranvirpardeshi.me/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ranvirpardeshi.me/" />
+    <meta property="og:title" content="Ranvir Pardeshi | AI & Automation Developer" />
+    <meta property="og:description" content="Portfolio of Ranvir Pardeshi, passionate about AI Agents, Automation, and Web Development." />
+    <meta property="og:image" content="https://user-images.githubusercontent.com/810438/212653068-0a133238-518c-42a8-a02b-09254341996a.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ranvirpardeshi.me/" />
+    <meta property="twitter:title" content="Ranvir Pardeshi | AI & Automation Developer" />
+    <meta property="twitter:description" content="Portfolio of Ranvir Pardeshi, passionate about AI Agents, Automation, and Web Development." />
+    <meta property="twitter:image" content="https://user-images.githubusercontent.com/810438/212653068-0a133238-518c-42a8-a02b-09254341996a.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'brand-dark': '#212529',
+              'brand-secondary': '#555555', // Updated for AA contrast
+              'brand-bg': '#FFFFFF',
+              'brand-border': '#E5E7EB',
+            },
+            borderRadius: {
+              'xl': '1rem',
+              '2xl': '1.5rem',
+            }
+          },
+        },
+      }
+    </script>
+    <style type="text/css">
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #ffffff;
+        color: #212529;
+      }
+      .animate-wave {
+        animation: wave-animation 2.5s infinite;
+        transform-origin: 70% 70%;
+        display: inline-block;
+      }
+
+      @keyframes wave-animation {
+          0% { transform: rotate( 0.0deg) }
+         10% { transform: rotate(14.0deg) }
+         20% { transform: rotate(-8.0deg) }
+         30% { transform: rotate(14.0deg) }
+         40% { transform: rotate(-4.0deg) }
+         50% { transform: rotate(10.0deg) }
+         60% { transform: rotate( 0.0deg) }
+        100% { transform: rotate( 0.0deg) }
+      }
+    </style>
+    <!-- Schema.org for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ranvir Pardeshi",
+      "url": "https://ranvirpardeshi.me",
+      "sameAs": [
+        "https://github.com/ranvir80",
+        "https://www.linkedin.com/in/ranvirpardeshi/"
+      ],
+      "jobTitle": "AI Agent & Automation Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Ranvir Pardeshi"
+      },
+      "description": "Student developer exploring the future of intelligent systems through AI-powered automation."
+    }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.5",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

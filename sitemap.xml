@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ranvirpardeshi.me/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ranvirpardeshi.me/#/about</loc>
+    <lastmod>2023-10-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ranvirpardeshi.me/#/projects</loc>
+    <lastmod>2023-10-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ranvirpardeshi.me/#/blog</loc>
+    <lastmod>2023-10-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ranvirpardeshi.me/#/contact</loc>
+    <lastmod>2023-10-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>

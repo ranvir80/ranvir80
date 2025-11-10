@@ -10,31 +10,31 @@ interface Project {
 
 const allProjects: Project[] = [
   {
-    title: "Project 1",
-    category: "A",
-    link: "#",
-    imageUrl: "https://placehold.co/600x400/e2e8f0/2d3748?text=Project+1+UI",
+    title: "Portfolio Website",
+    category: "Web Dev",
+    link: "https://www.ranvirpardeshi.me",
+    imageUrl: "/images/portfoliologo.png",
     linkText: "Demo",
   },
   {
-    title: "Project 2",
-    category: "B",
-    link: "#",
-    imageUrl: "https://placehold.co/600x400/e2e8f0/2d3748?text=Project+2+UI",
+    title: "Custom Whatsapp API",
+    category: "Custom API",
+    link: "https://github.com/ranvir80/Simple-Whatsapp-API-Using-WhiskeySockets_Baileys",
+    imageUrl: "/images/apilogo.png",
     linkText: "Demo",
   },
   {
     title: "Project 3",
-    category: "C",
+    category: "AI Agent & Automation",
     link: "#",
-    imageUrl: "https://placehold.co/600x400/e2e8f0/2d3748?text=Project+3+UI",
+    imageUrl: "/images/comingsoon.png",
     linkText: "Demo",
   },
    {
     title: "Project 4",
-    category: "A",
+    category: "AI Agent & Automation",
     link: "#",
-    imageUrl: "https://placehold.co/600x400/e2e8f0/2d3748?text=Project+4+UI",
+    imageUrl: "/images/comingsoon.png",
     linkText: "Demo",
   },
 ];
@@ -60,7 +60,7 @@ const FilterButton: React.FC<{ label: string; active: boolean; onClick: () => vo
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'A', 'B', 'C'];
+  const filters = ['All', 'Web Dev', 'AI Agent & Automation', 'Custom API'];
   
   const filteredProjects = activeFilter === 'All' 
     ? allProjects 

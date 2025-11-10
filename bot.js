@@ -2,7 +2,7 @@
   'use strict';
   
   // ===== CONFIGURATION =====
-  const API_ENDPOINT = 'http://localhost:5000/api/chat';
+  const API_ENDPOINT = 'https://ranvirwebbot.onrender.com/api/chat';
   const STORAGE_KEY_USER = 'chatbot_user_data';
   const STORAGE_KEY_CHAT_PREFIX = 'chatbot_chat_';
   

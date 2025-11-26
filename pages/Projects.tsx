@@ -24,10 +24,10 @@ const allProjects: Project[] = [
     linkText: "Demo",
   },
   {
-    title: "Project 3",
-    category: "AI Agent & Automation",
-    link: "#",
-    imageUrl: "https://cdn.jsdelivr.net/gh/ranvir80/ranvir80@main/images/comingsoon.png",
+    title: "Aarambha Classes Web",
+    category: "Web Dev",
+    link: "https://aarambhaclasses.vercel.app",
+    imageUrl: "https://cdn.jsdelivr.net/gh/ranvir80/ranvir80@main/images/aarambha.png",
     linkText: "Demo",
   },
    {

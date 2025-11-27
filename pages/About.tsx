@@ -30,7 +30,7 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="flex justify-center">
                     <img 
-                      src="https://media.licdn.com/dms/image/v2/D4D03AQGODCrxDdUFHQ/profile-displayphoto-scale_400_400/B4DZpUFm7oGwAk-/0/1762347348414?e=1764201600&v=beta&t=vwjhz8odcoClqs-aUHeZdpiTorRqRtPGopS3VQkisQI" 
+                      src="https://cdn.jsdelivr.net/gh/ranvir80/ranvir80@main/images/1762347348414.jpg" 
                       alt="About Ranvir Pardeshi" 
                       className="rounded-2xl w-full max-w-sm object-cover" 
                       width="384" 

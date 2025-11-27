@@ -56,7 +56,7 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
-              <img src="https://media.licdn.com/dms/image/v2/D4D03AQGODCrxDdUFHQ/profile-displayphoto-scale_400_400/B4DZpUFm7oGwAk-/0/1762347348414?e=1764201600&v=beta&t=vwjhz8odcoClqs-aUHeZdpiTorRqRtPGopS3VQkisQI" alt="Ranvir Pardeshi" className="w-full h-full object-cover" width="400" height="400"/>
+              <img src="https://cdn.jsdelivr.net/gh/ranvir80/ranvir80@main/images/1762347348414.jpg" alt="Ranvir Pardeshi" className="w-full h-full object-cover" width="400" height="400"/>
             </div>
           </motion.div>
 

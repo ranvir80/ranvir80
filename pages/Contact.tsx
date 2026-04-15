@@ -1,31 +1,5 @@
 import React, { useState } from 'react';
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { SendIcon, MailIcon } from '../components/Icons';
-
-// 🔑 IMPORTANT: Replace these with your own Supabase project credentials
-const supabaseUrl = "https://dummvyivubbpltqcpszg.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1bW12eWl2dWJicGx0cWNwc3pnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MDA3NDIsImV4cCI6MjA3ODA3Njc0Mn0.mwgAO-MwnjhBVXGiSc0TlKaeULAuBmgkixclgkUNggI";
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-
-// --- Helper Functions ---
-
-// Computes SHA-256 hash in hex format
-async function sha256Hex(str: string): Promise<string> {
-  const data = new TextEncoder().encode(str);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Gets the user's public IP address from ipify API
-async function getPublicIp(): Promise<string> {
-  const res = await fetch("https://api.ipify.org?format=json");
-  if (!res.ok) throw new Error("Failed to get IP address.");
-  const data = await res.json();
-  return data.ip;
-}
-
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -41,43 +15,31 @@ const Contact: React.FC = () => {
     e.preventDefault();
     if (isSubmitting) return;
 
-    // Basic validation to ensure Supabase URL/Key are set
-    if (!supabaseUrl.includes('supabase.co') || !supabaseKey.startsWith('ey')) {
-         setStatus('⚠️ Supabase credentials are not configured. Please update the contact form component.');
-         return;
-    }
-
     setIsSubmitting(true);
-    setStatus('Sending...');
+    setStatus("Sending...");
 
     try {
-      // 1. Get and hash the user's IP address
-      const ip = await getPublicIp();
-      const ip_hash = await sha256Hex(ip);
+      const res = await fetch("https://form.pardeshiranvir156.workers.dev", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
 
-      // 2. Insert the form data into the Supabase table
-      const { error } = await supabase.from("contact_messages").insert([
-        { ...formData, ip_hash }
-      ]);
+      const data = await res.json();
 
-      if (error) {
-        // Handle potential errors, like rate-limiting from RLS
-        if (error.message.includes("violates row-level security policy")) {
-          setStatus("❌ Limit reached — please try again later.");
-        } else {
-          console.error('Supabase Error:', error);
-          setStatus("❌ Failed to send message. Please try again.");
-        }
+      if (!res.ok) {
+        setStatus("❌ " + (data.error || "Failed"));
       } else {
-        setStatus("✅ Message sent successfully!");
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
+        setStatus("✅ Message sent!");
+        setFormData({ name: '', email: '', subject: '', message: '' });
       }
-    } catch (err: any) {
-      console.error('Submission Error:', err);
-      setStatus(`⚠️ An error occurred: ${err.message}`);
+
+    } catch (err) {
+      setStatus("⚠️ Network error");
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setStatus(''), 5000); // Clear status after 5 seconds
     }
   };
 

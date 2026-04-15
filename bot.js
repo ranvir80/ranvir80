@@ -2,9 +2,10 @@
   'use strict';
   
   // ===== CONFIGURATION =====
-  const API_ENDPOINT = window.RANVIR_BOT_API || 'chat.pardeshiranvir156.workers.dev/api/chat';
-  const STORAGE_KEY_USER = 'chatbot_user_data';
-  const STORAGE_KEY_CHAT_PREFIX = 'chatbot_chat_';
+const API_ENDPOINT = 'https://chat.pardeshiranvir156.workers.dev/api/chat';
+
+const STORAGE_KEY_USER = 'chatbot_user_data';
+const STORAGE_KEY_CHAT_PREFIX = 'chatbot_chat_';
   
   // ===== STATE =====
   let userData = null;

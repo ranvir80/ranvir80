@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SendIcon, MailIcon } from '../components/Icons';
 
 declare global {
@@ -99,12 +100,13 @@ const Contact: React.FC = () => {
       const data = await res.json();
 
       if (res.ok && data.success !== false) {
-        setStatus("✅ Transmission successful! We will contact you soon.");
+        setStatus("success");
         setFormData({ name: '', email: '', subject: '', lookingFor: 'General Inquiry', message: '' });
         if (window.turnstile && widgetId) {
           window.turnstile.reset(widgetId);
         }
         setTurnstileToken(null);
+        setTimeout(() => setStatus(""), 5000);
       } else {
         setStatus("❌ " + (data.error || "Transmission failed."));
       }
@@ -177,7 +179,31 @@ const Contact: React.FC = () => {
                 </button>
               </div>
             </form>
-            {status && <p className={`mt-4 font-semibold text-center md:text-left ${status.includes('❌') || status.includes('⚠️') ? 'text-red-500' : 'text-green-500'}`}>{status}</p>}
+            <AnimatePresence>
+              {status && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className={`mt-6 p-4 rounded-xl font-medium text-center shadow-sm flex items-center justify-center gap-3 ${
+                    status === 'success' 
+                      ? 'bg-green-50 text-green-700 border border-green-200' 
+                      : 'bg-red-50 text-red-700 border border-red-200'
+                  }`}
+                >
+                  {status === 'success' ? (
+                    <>
+                      <div className="bg-green-100 rounded-full p-1">
+                        <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                      </div>
+                      <span>Transmission successful! We will contact you soon.</span>
+                    </>
+                  ) : (
+                    <span>{status}</span>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
         </div>

@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
 
     try {
       // REPLACE THIS with your worker URL from Cloudflare
-      const res = await fetch("https://form.pardeshiranvir156.workers.dev", {
+      const res = await fetch("https://formofaeth.pardeshiranvir156.workers.dev", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

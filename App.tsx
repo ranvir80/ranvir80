@@ -16,7 +16,7 @@ const pageVariants = {
   out: { opacity: 0, y: -20 },
 };
 
-const pageTransition = {
+const pageTransition: any = {
   type: 'tween',
   ease: 'anticipate',
   duration: 0.5,

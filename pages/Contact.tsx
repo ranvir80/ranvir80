@@ -1,43 +1,98 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SendIcon, MailIcon } from '../components/Icons';
 
+declare global {
+  interface Window {
+    turnstile: any;
+    onTurnstileSuccess: (token: string) => void;
+    onTurnstileExpired: () => void;
+  }
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  lookingFor: string;
+  message: string;
+}
+
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '', subject: '', lookingFor: 'General Inquiry', message: '' });
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+
+    window.onTurnstileSuccess = (token: string) => {
+      setTurnstileToken(token);
+      console.log("Turnstile verified");
+    };
+
+    window.onTurnstileExpired = () => {
+      setTurnstileToken(null);
+      setStatus("Security check expired. Please refresh the page.");
+    };
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev: FormData) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      setStatus("⚠️ Please complete the security check.");
+      return;
+    }
     if (isSubmitting) return;
 
     setIsSubmitting(true);
-    setStatus("Sending...");
+    setStatus("Transmitting...");
+
+    const payload = {
+      ...formData,
+      captchaToken: turnstileToken,
+      timestamp: new Date().toISOString()
+    };
 
     try {
+      // REPLACE THIS with your worker URL from Cloudflare
       const res = await fetch("https://form.pardeshiranvir156.workers.dev", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       const data = await res.json();
 
-      if (!res.ok) {
-        setStatus("❌ " + (data.error || "Failed"));
+      if (res.ok && data.success !== false) {
+        setStatus("✅ Transmission successful! We will contact you soon.");
+        setFormData({ name: '', email: '', subject: '', lookingFor: 'General Inquiry', message: '' });
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+        setTurnstileToken(null);
       } else {
-        setStatus("✅ Message sent!");
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setStatus("❌ " + (data.error || "Transmission failed."));
       }
-
     } catch (err) {
-      setStatus("⚠️ Network error");
+      console.error("Error:", err);
+      setStatus("⚠️ Network error. Please check your connection.");
     } finally {
       setIsSubmitting(false);
     }
@@ -69,7 +124,7 @@ const Contact: React.FC = () => {
           
           <div className="w-full">
             <h3 className="text-2xl font-semibold mb-10">What's the project?</h3>
-            <form onSubmit={handleSubmit} className="space-y-12">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-12">
               <div className="relative">
                 <label htmlFor="name" className="absolute -top-3.5 left-0 text-sm text-brand-secondary">Name</label>
                 <input type="text" name="name" id="name" placeholder="Type your name" value={formData.name} onChange={handleChange} required className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors" />
@@ -83,16 +138,28 @@ const Contact: React.FC = () => {
                 <input type="text" name="subject" id="subject" placeholder="What's this about?" value={formData.subject} onChange={handleChange} required className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors" />
               </div>
               <div className="relative">
+                <label htmlFor="lookingFor" className="absolute -top-3.5 left-0 text-sm text-brand-secondary">Interest</label>
+                <select name="lookingFor" id="lookingFor" value={formData.lookingFor} onChange={handleChange} className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors text-brand-dark">
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+                  <option value="Security Audit">Security Audit</option>
+                </select>
+              </div>
+              <div className="relative">
                 <label htmlFor="message" className="absolute -top-3.5 left-0 text-sm text-brand-secondary">Message</label>
                 <textarea name="message" id="message" placeholder="Provide some project details..." rows={2} value={formData.message} onChange={handleChange} required className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors"></textarea>
               </div>
+              
+              <div className="cf-turnstile" data-sitekey="0x4AAAAAADIuUSieP368XCOf" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired"></div>
+
               <div>
-                <button type="submit" disabled={isSubmitting} className="inline-flex items-center gap-3 px-8 py-3 rounded-lg font-semibold text-white bg-brand-dark hover:bg-black shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                  {isSubmitting ? 'Sending...' : 'Send Message'} <SendIcon className="w-5 h-5"/>
+                <button type="submit" disabled={isSubmitting || !turnstileToken} className="inline-flex items-center gap-3 px-8 py-3 rounded-lg font-semibold text-white bg-brand-dark hover:bg-black shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                  {isSubmitting ? 'Transmitting...' : 'Send Transmission'} <SendIcon className="w-5 h-5"/>
                 </button>
               </div>
             </form>
-            {status && <p className="mt-4 font-semibold text-center md:text-left">{status}</p>}
+            {status && <p className={`mt-4 font-semibold text-center md:text-left ${status.includes('❌') || status.includes('⚠️') ? 'text-red-500' : 'text-green-500'}`}>{status}</p>}
           </div>
 
         </div>

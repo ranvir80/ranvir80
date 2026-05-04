@@ -23,28 +23,46 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const [widgetId, setWidgetId] = useState<string | null>(null);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-
-    window.onTurnstileSuccess = (token: string) => {
-      setTurnstileToken(token);
-      console.log("Turnstile verified");
+    const mountTurnstile = () => {
+      if (window.turnstile && turnstileRef.current && !widgetId) {
+        const id = window.turnstile.render(turnstileRef.current, {
+          sitekey: '0x4AAAAAADIuUSieP368XCOf',
+          callback: (token: string) => {
+            setTurnstileToken(token);
+            console.log("Turnstile verified");
+          },
+          'expired-callback': () => {
+            setTurnstileToken(null);
+            setStatus("Security check expired. Please resolve the captcha again.");
+          }
+        });
+        setWidgetId(id);
+      }
     };
 
-    window.onTurnstileExpired = () => {
-      setTurnstileToken(null);
-      setStatus("Security check expired. Please refresh the page.");
-    };
+    if (window.turnstile) {
+      mountTurnstile();
+    } else {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      script.async = true;
+      script.defer = true;
+      script.onload = mountTurnstile;
+      document.head.appendChild(script);
+    }
 
     return () => {
-      document.head.removeChild(script);
+      if (widgetId && window.turnstile) {
+        try {
+          window.turnstile.remove(widgetId);
+        } catch (e) {}
+      }
     };
-  }, []);
+  }, [widgetId]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -83,8 +101,8 @@ const Contact: React.FC = () => {
       if (res.ok && data.success !== false) {
         setStatus("✅ Transmission successful! We will contact you soon.");
         setFormData({ name: '', email: '', subject: '', lookingFor: 'General Inquiry', message: '' });
-        if (window.turnstile) {
-          window.turnstile.reset();
+        if (window.turnstile && widgetId) {
+          window.turnstile.reset(widgetId);
         }
         setTurnstileToken(null);
       } else {
@@ -151,7 +169,7 @@ const Contact: React.FC = () => {
                 <textarea name="message" id="message" placeholder="Provide some project details..." rows={2} value={formData.message} onChange={handleChange} required className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors"></textarea>
               </div>
               
-              <div className="cf-turnstile" data-sitekey="0x4AAAAAADIuUSieP368XCOf" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired"></div>
+              <div ref={turnstileRef}></div>
 
               <div>
                 <button type="submit" disabled={isSubmitting || !turnstileToken} className="inline-flex items-center gap-3 px-8 py-3 rounded-lg font-semibold text-white bg-brand-dark hover:bg-black shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">

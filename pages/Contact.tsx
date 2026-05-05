@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SendIcon, MailIcon } from '../components/Icons';
+import Dropdown from '../components/Dropdown';
+
 
 declare global {
   interface Window {
@@ -157,15 +159,13 @@ const Contact: React.FC = () => {
                 <label htmlFor="subject" className="absolute -top-3.5 left-0 text-sm text-brand-secondary">Subject</label>
                 <input type="text" name="subject" id="subject" placeholder="What's this about?" value={formData.subject} onChange={handleChange} required className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors" />
               </div>
-              <div className="relative">
-                <label htmlFor="lookingFor" className="absolute -top-3.5 left-0 text-sm text-brand-secondary">Interest</label>
-                <select name="lookingFor" id="lookingFor" value={formData.lookingFor} onChange={handleChange} className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors text-brand-dark">
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Web Development">Web Development</option>
-                  <option value="Cloud Infrastructure">Cloud Infrastructure</option>
-                  <option value="Security Audit">Security Audit</option>
-                </select>
-              </div>
+              <Dropdown
+                label="Interest"
+                options={["General Inquiry", "Web Development", "Cloud Infrastructure", "Security Audit"]}
+                selected={formData.lookingFor}
+                onChange={(value) => setFormData(prev => ({ ...prev, lookingFor: value }))}
+              />
+
               <div className="relative">
                 <label htmlFor="message" className="absolute -top-3.5 left-0 text-sm text-brand-secondary">Message</label>
                 <textarea name="message" id="message" placeholder="Provide some project details..." rows={2} value={formData.message} onChange={handleChange} required className="block w-full bg-transparent border-0 border-b-2 border-gray-300 py-2 px-1 focus:outline-none focus:ring-0 focus:border-brand-dark transition-colors"></textarea>
